@@ -1,0 +1,32 @@
+﻿@model Scaffolding.Models.Customer
+
+@{
+    ViewBag.Title = "Delete Page";
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h3>@ViewBag.Message</h3>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <span style="display:inline-block; border-bottom:1px solid black; min-width: 100px !important; text-align:left;">Code</span>&nbsp;&nbsp;<span style="display:inline-block; border-bottom:1px solid black; min-width: 150px; text-align:center;">Name</span>
+        </dt>
+
+        <dd>
+            <span style="display:inline-block; min-width: 100px !important; text-align:left;">@Html.DisplayFor(model => model.CustomerCode).ToString().Trim()</span>&nbsp;&nbsp;<span style="display:inline-block; min-width: 150px; text-align:left">@Html.DisplayFor(model => model.CustomerName).ToString().Trim()</span>
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" />
+        </div>
+        <br />
+        @Html.ActionLink("Back to List", "Index")
+    }
+</div>
