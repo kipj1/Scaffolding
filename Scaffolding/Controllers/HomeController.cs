@@ -31,7 +31,7 @@ namespace Scaffolding.Controllers
          // GET: Customers 
          public ActionResult Index()
          {
-           return View(db.Customers.ToList());
+            return View(db.Customers.ToList());
         }
 
         // GET: Customers/Details/5 
