@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Scaffolding.Models.Customer>
 
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "";
 }
 <span style="display:inline-block; font-style:italic; font-size:8px; padding-left:0px">
     GitHub Location:<a href="https://github.com/kipj1/Scaffolding/tree/master/Scaffolding">https://github.com/kipj1/Scaffolding/tree/master/Scaffolding</a>
@@ -9,7 +9,7 @@
 <br />
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create Customer", "Create")
 </p>
 <ul data-role="listview" class="ui-listview" data-filter="true">
     @foreach (var item in Model)
