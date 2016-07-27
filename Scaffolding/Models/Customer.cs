@@ -7,6 +7,7 @@ namespace Scaffolding.Models
 {
     public class Customer
     {
+        //---------------Customer Object------------------------
         [Key]
         public string CustomerCode { get; set; }
         public string CustomerName { get; set; }

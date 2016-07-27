@@ -17,6 +17,7 @@ namespace Scaffolding.Models
     
         public CustomerContext() : base("name=CustomerContext")
         {
+            //---------------Customer Context Object------------------------
         }
 
         public System.Data.Entity.DbSet<Scaffolding.Models.Customer> Customers { get; set; }
