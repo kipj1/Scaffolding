@@ -33,6 +33,8 @@ namespace Scaffolding.Controllers
          // GET: Customers 
          public ActionResult Index()
          {
+            ModelState.Clear();
+
             //---Return customers to show when on the index page----
             return View(db.Customers.ToList());
         }
@@ -71,8 +73,9 @@ namespace Scaffolding.Controllers
              if (ModelState.IsValid) 
              { 
                  db.Customers.Add(customer); 
-                 db.SaveChanges(); 
-                 return RedirectToAction("Index"); 
+                 db.SaveChanges();
+                ModelState.Clear();
+                return RedirectToAction("Index"); 
              } 
  
  
@@ -108,7 +111,8 @@ namespace Scaffolding.Controllers
              {
                  //---Tell Entity Framework you want to perform a update/edit and then save changes then redirect back to index page------
                  db.Entry(customer).State = EntityState.Modified; 
-                 db.SaveChanges(); 
+                 db.SaveChanges();
+
                  return RedirectToAction("Index"); 
              } 
              return View(customer); 

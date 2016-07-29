@@ -22,7 +22,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CustomerCode, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CustomerCode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.CustomerCode, new { htmlAttributes = new { @class = "form-control", disabled = "disabled" } })
                 @Html.ValidationMessageFor(model => model.CustomerCode, "", new { @class = "text-danger" })
             </div>
             <br />
@@ -44,5 +44,6 @@
 
 <div>
     <br />
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", "Home", null, new { data_role = "link", data_theme = "b", data_mini = "true", data_ajax = "false" })
+
 </div>

@@ -15,7 +15,7 @@
     @foreach (var item in Model)
     {
         <li>
-            <span style="display:inline-block; min-width: 100px;">@Html.DisplayFor(model => item.CustomerName)</span> 
+            <span style="display:inline-block; min-width: 100px;">@Html.DisplayFor(modelItem => item.CustomerName)</span> 
             @Html.ActionLink("Edit", "Edit", new { id = item.CustomerCode })
             @Html.ActionLink("Delete", "Delete", new { id = item.CustomerCode })
         </li>
