@@ -5,9 +5,9 @@ namespace Scaffolding.Controllers
 {
     public class ViewSwitcherController : Controller
     {
-        public RedirectResult SwitchView(bool userRequestedMobileState, string returnUrl) {
+        public RedirectResult SwitchView(bool userRequestingMobileState, string returnUrl) {
             //--- Redirect to Mobile or Desktop based on device detection-----
-            if (Request.Browser.IsMobileDevice == userRequestedMobileState)
+            if (Request.Browser.IsMobileDevice == userRequestingMobileState)
             {
                 //--- We are a "mobile device" and "userRequestedMobileState"=true ----
                 HttpContext.ClearOverriddenBrowser();
@@ -15,7 +15,7 @@ namespace Scaffolding.Controllers
             else
             {
                 //--- We are NOT a "mobile device"----
-                if (userRequestedMobileState == true)
+                if (userRequestingMobileState == true)
                 {
                     //--- We are NOT a "mobile device" and "userRequestedMobileState"=true ----
                     HttpContext.SetOverriddenBrowser(BrowserOverride.Mobile);
